@@ -1,0 +1,6 @@
+@dapr.microservice.webapi_HostAddress = http://localhost:5175
+
+GET {{dapr.microservice.webapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
