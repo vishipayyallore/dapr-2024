@@ -17,6 +17,6 @@ darp init
 ```bash
 dotnet new webapi -o dapr.microservice.webapi
 
-dotnet add package Dapr.AspNetCore --version 1.8.0
+dotnet add package Dapr.AspNetCore --version 1.12.0
 
 ```
