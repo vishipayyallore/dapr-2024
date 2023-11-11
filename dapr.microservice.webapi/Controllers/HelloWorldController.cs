@@ -2,13 +2,13 @@
 
 namespace dapr.microservice.webapi.Controllers;
 
-[Route("api/[controller]")]
+//[Route("api/[controller]")]
 [ApiController]
 public class HelloController(ILogger<HelloController> logger) : ControllerBase
 {
     private readonly ILogger<HelloController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
-    [HttpGet()]
+    [HttpGet("gethello")]
     public ActionResult<string> Get()
     {
         Console.WriteLine("Hello, World.");
