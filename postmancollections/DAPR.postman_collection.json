@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "5724b987-9b9b-4ae1-a782-85df79db3e56",
+		"name": "DAPR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24752915"
+	},
+	"item": [
+		{
+			"name": "dapr.microservice.webapi",
+			"item": [
+				{
+					"name": "GET api/helloworld/gethello",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "dapr-app-id",
+								"value": "helloworld",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/helloworld/gethello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"helloworld",
+								"gethello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET invoke/sample/method/api/helloworld/gethello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5010/v1.0/invoke/sample/method/api/helloworld/gethello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5010",
+							"path": [
+								"v1.0",
+								"invoke",
+								"sample",
+								"method",
+								"api",
+								"helloworld",
+								"gethello"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
