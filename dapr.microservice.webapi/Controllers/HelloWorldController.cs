@@ -2,7 +2,7 @@
 
 namespace dapr.microservice.webapi.Controllers;
 
-//[Route("api/[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class HelloController(ILogger<HelloController> logger) : ControllerBase
 {
