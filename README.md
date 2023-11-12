@@ -9,7 +9,7 @@ darp --version
 
 darp --help
 
-darp init
+darp init # In  Run as administrator. It should install all required components
 
 dapr init -k  # For Kubernetes
 
