@@ -11,6 +11,7 @@ public class HelloController(ILogger<HelloController> logger) : ControllerBase
     [HttpGet("gethello")]
     public ActionResult<string> Get()
     {
+        _logger.LogInformation("Hitting Get Hello Method.");
         Console.WriteLine("Hello, World.");
 
         return "Hello, World";
