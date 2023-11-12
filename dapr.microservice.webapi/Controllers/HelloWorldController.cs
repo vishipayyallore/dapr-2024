@@ -4,9 +4,9 @@ namespace dapr.microservice.webapi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class HelloController(ILogger<HelloController> logger) : ControllerBase
+public class HelloWorldController(ILogger<HelloWorldController> logger) : ControllerBase
 {
-    private readonly ILogger<HelloController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private readonly ILogger<HelloWorldController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
     [HttpGet("gethello")]
     public ActionResult<string> Get()
