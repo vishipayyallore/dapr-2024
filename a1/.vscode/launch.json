@@ -14,10 +14,10 @@
             "name": ".NET Core Launch w/Dapr (webapi)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "daprd-debug-webapi",
-            "program": "${workspaceFolder}/sample.microservice.webapi/bin/Debug/net8.0/sample.microservice.webapi.dll",
+            "preLaunchTask": "daprd-debug-helloworld-webapi",
+            "program": "${workspaceFolder}/dapr.microservice.webapi/bin/Debug/net8.0/dapr.microservice.webapi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sample.microservice.webapi",
+            "cwd": "${workspaceFolder}/dapr.microservice.webapi",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
@@ -27,16 +27,16 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             },
-            "postDebugTask": "daprd-down-webapi"
+            "postDebugTask": "daprd-down-helloworld-webapi"
         },
         {
             "name": ".NET Core Launch w/Dapr (webapi2)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "daprd-debug-webapi2",
-            "program": "${workspaceFolder}/sample.microservice.webapi2/bin/Debug/net8.0/sample.microservice.webapi2.dll",
+            "program": "${workspaceFolder}/dapr.microservice.webapi2/bin/Debug/net8.0/dapr.microservice.webapi2.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/sample.microservice.webapi2",
+            "cwd": "${workspaceFolder}/dapr.microservice.webapi2",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
