@@ -11,7 +11,7 @@
             "processId": "${command:pickProcess}"
         },
         {
-            "name": ".NET Core Launch w/Dapr (webapi)",
+            "name": ".NET Launch w/Dapr (sample-webapi)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "daprd-debug-sample-webapi",
@@ -22,7 +22,9 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "ASPNETCORE_URLS": "http://+:5001",
-                "DAPR_HTTP_PORT": "5010"
+                "DAPR_HTTP_PORT": "5010",
+                "DAPR_GRPC_PORT": "50010",
+                "APP_PORT": "5001",
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
@@ -30,7 +32,7 @@
             "postDebugTask": "daprd-down-sample-webapi"
         },
         {
-            "name": ".NET Core Launch w/Dapr (webapi2)",
+            "name": ".NET Launch w/Dapr (webapi2)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "daprd-debug-webapi2",
@@ -51,10 +53,10 @@
     ],
     "compounds": [
         {
-            "name": "webApi + webApi2 w/Dapr",
+            "name": "sample-webapi + webApi2 w/Dapr",
             "configurations": [
-                ".NET Core Launch w/Dapr (webapi)",
-                ".NET Core Launch w/Dapr (webapi2)"
+                ".NET Launch w/Dapr (sample-webapi)",
+                ".NET Launch w/Dapr (webapi2)"
             ]
         }
     ]
