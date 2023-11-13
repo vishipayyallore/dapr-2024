@@ -1,63 +1,51 @@
 {
-    // Use IntelliSense to find out which attributes exist for C# debugging
-    // Use hover for the description of the existing attributes
-    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
-        },
-        {
-            "name": ".NET Launch w/Dapr (sample-webapi)",
+            "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "dapr-debug-sample-webapi",
+            "preLaunchTask": "build",
             "program": "${workspaceFolder}/dapr.microservice.webapi/bin/Debug/net8.0/dapr.microservice.webapi.dll",
             "args": [],
             "cwd": "${workspaceFolder}/dapr.microservice.webapi",
             "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "http://+:5001",
-                "DAPR_HTTP_PORT": "5010",
-                "DAPR_GRPC_PORT": "5011",
-                "APP_PORT": "5001"
+                "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
-            },
-            "postDebugTask": "daprd-down-sample-webapi"
+            }
         },
         {
-            "name": ".NET Launch w/Dapr (webapi2)",
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+        {
+            "name": ".NET Core Launch (web) with Dapr",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "dapr-debug-webapi2",
-            "program": "${workspaceFolder}/dapr.microservice.webapi2/bin/Debug/net8.0/dapr.microservice.webapi2.dll",
+            "preLaunchTask": "dapr-debug",
+            "program": "${workspaceFolder}/dapr.microservice.webapi/bin/Debug/net8.0/dapr.microservice.webapi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/dapr.microservice.webapi2",
+            "cwd": "${workspaceFolder}/dapr.microservice.webapi",
             "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "http://+:5002",
-                "DAPR_HTTP_PORT": "5020"
+                "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             },
-            "postDebugTask": "daprd-down-webapi2"
-        }
-    ],
-    "compounds": [
-        {
-            "name": "sample-webapi + webApi2 w/Dapr",
-            "configurations": [
-                ".NET Launch w/Dapr (sample-webapi)",
-                ".NET Launch w/Dapr (webapi2)"
-            ]
+            "postDebugTask": "daprd-down"
         }
     ]
 }
