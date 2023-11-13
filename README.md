@@ -11,6 +11,10 @@ darp --help
 
 darp init # In  Run as administrator. It should install all required components
 
+dapr uninstall --all
+
+dapr init # For Standalone
+
 dapr init -k  # For Kubernetes
 
 dapr status -k
