@@ -27,7 +27,7 @@
             "request": "attach"
         },
         {
-            "name": ".NET Core Launch (web) with Dapr",
+            "name": "sample-app - .NET Launch - Dapr",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "dapr-debug",
@@ -45,7 +45,8 @@
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
-            }
+            },
+            "postDebugTask": "daprd-down"
         }
     ]
 }

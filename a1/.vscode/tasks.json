@@ -38,20 +38,15 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "appId": "sample",
+            "appId": "sample-app",
             "appPort": 5000,
             "httpPort": 5010,
             "label": "dapr-debug",
             "type": "dapr",
-            // "args": [
-            //     "--project ./dapr.microservice.webapi/dapr.microservice.webapi.csproj",
-            //     "--urls",
-            //     "\"http://+:5000\""
-            // ],
             "dependsOn": "build"
         },
         {
-            "appId": "sample",
+            "appId": "sample-app",
             "label": "daprd-down",
             "type": "daprd-down"
         }
