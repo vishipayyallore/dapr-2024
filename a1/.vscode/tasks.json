@@ -38,14 +38,18 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "appId": "app",
+            "appId": "sample",
             "appPort": 5000,
+            "httpPort": 5010,
             "label": "dapr-debug",
             "type": "dapr",
+            "command": [
+                "-- dotnet run --project dapr.microservice.webapi.csproj --urls=\"http://+:5000\""
+            ],
             "dependsOn": "build"
         },
         {
-            "appId": "app",
+            "appId": "sample",
             "label": "daprd-down",
             "type": "daprd-down"
         }
