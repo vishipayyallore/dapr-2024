@@ -14,7 +14,7 @@
             "name": ".NET Launch w/Dapr (sample-webapi)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "daprd-debug-sample-webapi",
+            "preLaunchTask": "dapr-debug-sample-webapi",
             "program": "${workspaceFolder}/dapr.microservice.webapi/bin/Debug/net8.0/dapr.microservice.webapi.dll",
             "args": [],
             "cwd": "${workspaceFolder}/dapr.microservice.webapi",
@@ -23,8 +23,8 @@
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "ASPNETCORE_URLS": "http://+:5001",
                 "DAPR_HTTP_PORT": "5010",
-                "DAPR_GRPC_PORT": "50010",
-                "APP_PORT": "5001",
+                "DAPR_GRPC_PORT": "5011",
+                "APP_PORT": "5001"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
@@ -35,7 +35,7 @@
             "name": ".NET Launch w/Dapr (webapi2)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "daprd-debug-webapi2",
+            "preLaunchTask": "dapr-debug-webapi2",
             "program": "${workspaceFolder}/dapr.microservice.webapi2/bin/Debug/net8.0/dapr.microservice.webapi2.dll",
             "args": [],
             "cwd": "${workspaceFolder}/dapr.microservice.webapi2",
