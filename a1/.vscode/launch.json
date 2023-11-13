@@ -14,7 +14,7 @@
             "name": ".NET Core Launch w/Dapr (webapi)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "daprd-debug-helloworld-webapi",
+            "preLaunchTask": "daprd-debug-sample-webapi",
             "program": "${workspaceFolder}/dapr.microservice.webapi/bin/Debug/net8.0/dapr.microservice.webapi.dll",
             "args": [],
             "cwd": "${workspaceFolder}/dapr.microservice.webapi",
@@ -27,7 +27,7 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             },
-            "postDebugTask": "daprd-down-helloworld-webapi"
+            "postDebugTask": "daprd-down-sample-webapi"
         },
         {
             "name": ".NET Core Launch w/Dapr (webapi2)",

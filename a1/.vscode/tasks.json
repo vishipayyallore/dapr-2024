@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build-helloworld-webapi",
+            "label": "build-sample-webapi",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -56,7 +56,7 @@
             "httpPort": 5010,
             "grpcPort": 50010,
             "metricsPort": 9091,
-            "label": "daprd-debug-helloworld-webapi",
+            "label": "daprd-debug-sample-webapi",
             "type": "daprd",
             "problemMatcher": {
                 "pattern": [
@@ -72,7 +72,7 @@
                     "endsPattern": "^.*waiting on port.*"
                 }
             },
-            "dependsOn": "build-helloworld-webapi"
+            "dependsOn": "build-sample-webapi"
         },
         {
             "appId": "salute-world",
@@ -100,7 +100,7 @@
         },
         {
             "appId": "sample",
-            "label": "daprd-down-helloworld-webapi",
+            "label": "daprd-down-sample-webapi",
             "type": "daprd-down"
         },
         {
