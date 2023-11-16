@@ -2,26 +2,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build-webapi",
+            "label": "build",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sample.microservice.webapi/sample.microservice.webapi.csproj",
+                "${workspaceFolder}/dapr.microservice.webapi/dapr.microservice.webapi.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build-webapi2",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/sample.microservice.webapi2/sample.microservice.webapi2.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -31,9 +19,9 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/sample.microservice.webapi.csproj",
+                "${workspaceFolder}/dapr.microservice.webapi/dapr.microservice.webapi.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -44,68 +32,22 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/sample.microservice.webapi.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--project",
+                "${workspaceFolder}/dapr.microservice.webapi/dapr.microservice.webapi.sln"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "appId": "hello-world",
-            "appPort": 5001,
+            "appId": "sample-app",
+            "appPort": 5000,
             "httpPort": 5010,
-            "grpcPort": 50010,
-            "metricsPort": 9091,
-            "label": "daprd-debug-webapi",
-            "type": "daprd",
-            "problemMatcher": {
-                "pattern": [
-                    {
-                        "regexp": ".",
-                        "file": 1,
-                        "location": 2,
-                        "message": 3
-                    }
-                ],
-                "background": {
-                    "beginsPattern": "^.*starting Dapr Runtime.*",
-                    "endsPattern": "^.*waiting on port.*"
-                }
-            },
-            "dependsOn": "build-webapi"
+            "label": "dapr-debug",
+            "type": "dapr",
+            "dependsOn": "build"
         },
         {
-            "appId": "salute-world",
-            "appPort": 5002,
-            "httpPort": 5020,
-            "grpcPort": 50020,
-            "metricsPort": 9092,
-            "label": "daprd-debug-webapi2",
-            "type": "daprd",
-            "problemMatcher": {
-                "pattern": [
-                    {
-                        "regexp": ".",
-                        "file": 1,
-                        "location": 2,
-                        "message": 3
-                    }
-                ],
-                "background": {
-                    "beginsPattern": "^.*starting Dapr Runtime.*",
-                    "endsPattern": "^.*waiting on port.*"
-                }
-            },
-            "dependsOn": "build-webapi2"
-        },
-        {
-            "appId": "hello-world",
-            "label": "daprd-down-webapi",
-            "type": "daprd-down"
-        },
-        {
-            "appId": "salute-world",
-            "label": "daprd-down-webapi2",
+            "appId": "sample-app",
+            "label": "daprd-down",
             "type": "daprd-down"
         }
     ]
