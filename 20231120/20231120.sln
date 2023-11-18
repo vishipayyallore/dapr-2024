@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hello.DaprWebApi", "Hello.DaprWebApi\Hello.DaprWebApi.csproj", "{BA1E6674-BD8E-4E90-9553-4559D1C57B90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA1E6674-BD8E-4E90-9553-4559D1C57B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1E6674-BD8E-4E90-9553-4559D1C57B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1E6674-BD8E-4E90-9553-4559D1C57B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1E6674-BD8E-4E90-9553-4559D1C57B90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {488741F5-14B2-41E1-A22D-D51D0D9B6C44}
+	EndGlobalSection
+EndGlobal
