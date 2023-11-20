@@ -1,4 +1,4 @@
-@Hello.DaprWebApi_HostAddress = http://localhost:5158
+@Hello.DaprWebApi_HostAddress = http://localhost:5000
 
 GET {{Hello.DaprWebApi_HostAddress}}/weatherforecast/
 Accept: application/json
