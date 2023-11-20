@@ -1,6 +1,18 @@
 @Hello.DaprWebApi_HostAddress = http://localhost:5000
+@Hello.DaprWebApi_DaprHostAddress = http://localhost:5010
 
-GET {{Hello.DaprWebApi_HostAddress}}/weatherforecast/
+### GET http://localhost:5000/api/HelloWorld/Hello
+GET {{Hello.DaprWebApi_HostAddress}}/api/HelloWorld/Hello
 Accept: application/json
 
 ###
+
+### GET http://localhost:5010/v1.0/invoke/hello-dapr/method/api/HelloWorld/Hello
+GET {{Hello.DaprWebApi_DaprHostAddress}}/v1.0/invoke/hello-dapr/method/api/HelloWorld/Hello
+Accept: application/json
+
+###
+
+http://localhost:5000/api/HelloWorld/Greetings?userName=Sri%20Varu
+Hello -> Sri Varu !!
+PS C:\Users\PK.Viswanatha-Swamy> curl http://localhost:5010/v1.0/invoke/hello-dapr/method/api/HelloWorld/Greetings?userName=Sri%20Varu
