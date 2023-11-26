@@ -2,6 +2,12 @@
 
 I am learning DAPR from multiple books, video courses, and websites.
 
+## Ways to Execute and Debug DAPR
+
+> 1. Using DAPR CLI
+> 2. Using Visual Studio Code, .NET Core Attach to Process
+> 3. Leverage the Dapr extension for VS Code to scaffold the configuration files and launch the Dapr runtime
+
 ## Few commands to get started with DAPR
 
 ```bash
