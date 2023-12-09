@@ -4,8 +4,16 @@ I am learning this project from multiple books, video courses, and websites.
 
 ## DAPR - Distributed Application Runtime - An event-driven, portable runtime for building microservices on cloud and edge
 
+### Orders Microservice
+
 ```powershell
 dotnet new webapi -o CS.Services.Orders.Api
+dotnet add package Dapr.AspNetCore --version 1.12.0
+```
+
+### Reservations Microservice
+
+```powershell
 dotnet new webapi -o CS.Services.Reservations.Api
 ```
 
