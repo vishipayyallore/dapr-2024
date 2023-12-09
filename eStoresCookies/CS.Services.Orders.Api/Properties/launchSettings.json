@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "https": {
+    "CS.Services.Orders.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
