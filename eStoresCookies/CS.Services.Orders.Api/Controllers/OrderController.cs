@@ -2,6 +2,29 @@
 
 [Route("api/[controller]")]
 [ApiController]
-public class OrderController : ControllerBase
+public class OrderController(ILogger<OrderController> logger) : ControllerBase
 {
+
+    private readonly ILogger<OrderController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+    [HttpPost("order")]
+    public async Task<ActionResult<Guid>> SubmitOrder(Order order, [FromServices] DaprClient daprClient)
+    {
+        _logger.LogInformation("Starting OrderController::SubmitOrder().");
+
+        order.Id = Guid.NewGuid();
+
+        foreach (OrderItem item in order.Items!)
+        {
+            var data = new { sku = item.ProductCode, quantity = item.Quantity };
+
+            var result = await daprClient.InvokeMethodAsync<object, dynamic>(HttpMethod.Post, "reservation-service", "reserve", data);
+
+            _logger.LogInformation($"sku: {result.GetProperty("sku")} === new quantity: {result.GetProperty("quantity")}");
+        }
+
+        _logger.LogInformation($"Completed OrderController::SubmitOrder(). Order Id: {order.Id}");
+
+        return order.Id;
+    }
 }

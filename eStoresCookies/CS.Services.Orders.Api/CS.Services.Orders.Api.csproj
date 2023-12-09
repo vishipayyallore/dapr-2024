@@ -14,9 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Microsoft.AspNetCore.Mvc"/>
-    <Using Include="Microsoft.AspNetCore.Http"/>
-    <Using Include="System.Text.Json"/>
+    <Using Include="Microsoft.AspNetCore.Mvc" />
+    <Using Include="Microsoft.AspNetCore.Http" />
+    <Using Include="System.Text.Json" />
+    <Using Include="CS.Services.Orders.Api.Models" />
+    <Using Include="Dapr.Client"/>
   </ItemGroup>
-  
+
 </Project>
