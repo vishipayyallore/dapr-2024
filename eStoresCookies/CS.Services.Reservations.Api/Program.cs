@@ -25,3 +25,18 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpsRedirection();
 
 app.Run();
+
+app.MapPost("/reserve", ([FromServices] DaprClient client, [FromBody] Item item) =>
+{
+    app.Logger.LogInformation("Enter Reservation");
+
+    Item storedItem = new()
+    {
+        SKU = item.SKU
+    };
+    storedItem.Quantity -= item.Quantity;
+
+    app.Logger.LogInformation($"Reservation of {storedItem.SKU} is now {storedItem.Quantity}");
+
+    return Results.Ok(storedItem);
+});
