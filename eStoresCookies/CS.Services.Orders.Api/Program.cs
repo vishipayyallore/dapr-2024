@@ -1,5 +1,3 @@
-using System.Text.Json;
-
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 JsonSerializerOptions jsonOptions = new()
