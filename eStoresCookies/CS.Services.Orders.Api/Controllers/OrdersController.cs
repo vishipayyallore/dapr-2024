@@ -2,10 +2,10 @@
 
 [Route("api/[controller]")]
 [ApiController]
-public class OrderController(ILogger<OrderController> logger) : ControllerBase
+public class OrdersController(ILogger<OrdersController> logger) : ControllerBase
 {
 
-    private readonly ILogger<OrderController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private readonly ILogger<OrdersController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
     [HttpPost("order")]
     public async Task<ActionResult<Guid>> SubmitOrder(Order order, [FromServices] DaprClient daprClient)
