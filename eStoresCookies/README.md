@@ -1,6 +1,13 @@
 # eStores for Cookies
 
-I am learning DAPR from multiple books, video courses, and websites.
+I am learning this project from multiple books, video courses, and websites.
+
+## DAPR - Distributed Application Runtime - An event-driven, portable runtime for building microservices on cloud and edge
+
+```powershell
+dotnet new webapi -o CS.Services.Orders.Api
+dotnet new webapi -o CS.Services.Reservations.Api
+```
 
 ## Ways to Execute and Debug DAPR
 
