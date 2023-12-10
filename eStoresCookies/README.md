@@ -15,6 +15,7 @@ dotnet add package Dapr.AspNetCore --version 1.12.0
 
 ```powershell
 dotnet new webapi -o CS.Services.Reservations.Api
+dotnet add package Dapr.AspNetCore --version 1.12.0
 ```
 
 ### Executing the application
@@ -22,6 +23,9 @@ dotnet new webapi -o CS.Services.Reservations.Api
 ```powershell
 # order-service HTTP + reservation-service HTTP
 dapr run --app-id "order-service" --app-port "5001" --dapr-grpc-port "50010" --dapr-http-port "5010" -- dotnet run --project CS.Services.Orders.Api.csproj --urls="http://+:5001"
+dapr run --app-id "reservation-service" --app-port "5002" --dapr-grpc-port "50020" --dapr-http-port "5020" -- dotnet run --project CS.Services.Reservations.Api.csproj --urls="http://+:5002"
+
+# order-service HTTP + reservation-service HTTP with Resiliency
 
 # order-service HTTP + reservation-service HTTP with Resiliency
 dapr run --app-id "order-service" --app-port "5001" --dapr-grpc-port "50010" --dapr-http-port "5010" --config "./daprconfig.yaml" --components-path "./components" -- dotnet run --project CS.Services.Orders.Api.csproj --urls="http://+:5001"

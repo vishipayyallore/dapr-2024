@@ -24,8 +24,6 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 
-app.Run();
-
 app.MapPost("/reserve", ([FromServices] DaprClient client, [FromBody] Item item) =>
 {
     app.Logger.LogInformation("Enter Reservation");
@@ -39,4 +37,10 @@ app.MapPost("/reserve", ([FromServices] DaprClient client, [FromBody] Item item)
     app.Logger.LogInformation($"Reservation of {storedItem.SKU} is now {storedItem.Quantity}");
 
     return Results.Ok(storedItem);
-});
+})
+    .WithOpenApi()
+    .WithTags("Welcome.API")
+    .WithName("GetRootWelcome"); ;
+
+app.Run();
+
