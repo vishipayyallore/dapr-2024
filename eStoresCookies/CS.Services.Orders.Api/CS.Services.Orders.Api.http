@@ -1,6 +1,46 @@
-@CS.Services.Orders.Api_HostAddress = http://localhost:5125
+@CS.Services.Orders.Api_HostAddress = http://localhost:5010
 
-GET {{CS.Services.Orders.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+### Direct call to the order service
+
+POST {{CS.Services.Orders.Api_HostAddress}}/api/orders/order HTTP/1.1
+content-type: application/json
+
+{
+  "Items": [
+    {
+      "ProductCode": "cookie1",
+      "Quantity": 3
+    },
+    {
+      "ProductCode": "ultimate-cookie5",
+      "Quantity": 2
+    }
+  ]
+}
 
 ###
+
+POST {{CS.Services.Orders.Api_HostAddress}}/v1.0/invoke/order-service/method/api/orders/order HTTP/1.1
+content-type: application/json
+
+{
+  "Items": [
+    {
+      "ProductCode": "cookie1",
+      "Quantity": 3
+    },
+    {
+      "ProductCode": "ultimate-cookie5",
+      "Quantity": 2
+    }
+  ]
+}
+
+###
+POST http://localhost:5020/v1.0/invoke/reservation-service/method/reserve HTTP/1.1
+content-type: application/json
+
+{
+  "ProductCode": "cookie1",
+  "Quantity": 4
+}

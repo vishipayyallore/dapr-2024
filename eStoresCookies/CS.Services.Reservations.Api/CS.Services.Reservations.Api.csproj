@@ -18,6 +18,7 @@
     <Using Include="Microsoft.AspNetCore.Http" />
     <Using Include="System.Text.Json" />
     <Using Include="Dapr.Client" />
+    <Using Include="CS.Services.Reservations.Api.Models"/>
   </ItemGroup>
 
   <ItemGroup>
